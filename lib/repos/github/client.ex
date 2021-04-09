@@ -14,7 +14,6 @@ defmodule Repos.Github.Client do
 
   def get_repos_by_username(url \\ @base_url, username) do
     "#{url}/users/#{username}/repos"
-    |> IO.inspect()
     |> get()
     |> handle_get()
   end
