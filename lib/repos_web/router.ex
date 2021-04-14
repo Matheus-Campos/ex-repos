@@ -8,6 +8,7 @@ defmodule ReposWeb.Router do
   scope "/api", ReposWeb do
     pipe_through :api
 
+    post "/users", UsersController, :create
     get "/repos/:username", RepositoriesController, :index
   end
 
