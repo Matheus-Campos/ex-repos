@@ -12,6 +12,7 @@ defmodule ReposWeb.Router do
   scope "/api", ReposWeb do
     pipe_through :api
 
+    post "/users/login", UsersController, :login
     post "/users", UsersController, :create
   end
 
