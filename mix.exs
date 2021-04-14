@@ -46,7 +46,8 @@ defmodule Repos.MixProject do
       {:tesla, "~> 1.4.0"},
       {:hackney, "~> 1.17.0"},
       {:bypass, "~> 2.1", only: :test},
-      {:pbkdf2_elixir, "~> 1.4"}
+      {:pbkdf2_elixir, "~> 1.4"},
+      {:guardian, "~> 2.0"}
     ]
   end
 
