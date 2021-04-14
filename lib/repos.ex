@@ -1,5 +1,9 @@
 defmodule Repos do
-  alias Repos.Repositories.List
+  alias Repos.Repositories.List, as: ListRepositories
 
-  defdelegate get_repos_by_username(params), to: List, as: :call
+  alias Repos.Users.Create, as: CreateUser
+
+  defdelegate get_repos_by_username(params), to: ListRepositories, as: :call
+
+  defdelegate create_user(params), to: CreateUser, as: :call
 end
