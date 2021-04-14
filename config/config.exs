@@ -30,6 +30,10 @@ config :repos, ReposWeb.Auth.Guardian,
   issuer: "repos",
   secret_key: "XCxbRGwT+AZh8gEsENa5EWF9mjJKeLzELpCNxh/6dT6X7gQb/OjeJBpfUeZA0IAZ"
 
+config :repos, ReposWeb.Auth.Pipeline,
+  module: ReposWeb.Auth.Guardian,
+  error_handler: ReposWeb.Auth.ErrorHandler
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

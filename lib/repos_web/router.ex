@@ -5,10 +5,19 @@ defmodule ReposWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug ReposWeb.Auth.Pipeline
+  end
+
   scope "/api", ReposWeb do
     pipe_through :api
 
     post "/users", UsersController, :create
+  end
+
+  scope "/api", ReposWeb do
+    pipe_through [:api, :auth]
+
     get "/repos/:username", RepositoriesController, :index
   end
 
