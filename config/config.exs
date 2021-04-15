@@ -28,7 +28,8 @@ config :phoenix, :json_library, Jason
 
 config :repos, ReposWeb.Auth.Guardian,
   issuer: "repos",
-  secret_key: "XCxbRGwT+AZh8gEsENa5EWF9mjJKeLzELpCNxh/6dT6X7gQb/OjeJBpfUeZA0IAZ"
+  secret_key: "XCxbRGwT+AZh8gEsENa5EWF9mjJKeLzELpCNxh/6dT6X7gQb/OjeJBpfUeZA0IAZ",
+  ttl: {1, :minute}
 
 config :repos, ReposWeb.Auth.Pipeline,
   module: ReposWeb.Auth.Guardian,
